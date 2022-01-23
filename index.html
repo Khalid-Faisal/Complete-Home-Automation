@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Complete Home Automation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!-- Greating of user -->
+  <h1 id="greetings">Welcome Guest</h1>
+  Bolt ID: <input type="text" id="bolt_id" value="BOLT########">
+  <br>
+  API Key: <input type="text" id="api_key" value="-">
+  <br>
+
+  <!-- image -->
+
+  <div class="box fireAlert">
+    <img id="fireImg" src="Images/fire.png" alt="image" />
+    <span class="index fireAlert_status">OFF</span>
+  </div>
+  <div class="box fan">
+    <img id="fanImg" src="Images/fan2.png" alt="image" />
+    <span class="index fan_status">OFF</span>
+  </div>
+  <div class="box bulb">
+    <img id="bulbImg" src="Images/bulbOff1.jpg" alt="image" />
+    <span class="index bulb_status">OFF</span>
+  </div>
+  <div class="box alarm">
+    <img id="alarmImg" src="Images/alarm1.jpg" alt="image" />
+    <span class="index alarm_status">OFF</span>
+    <input type="time" id="alarm_T" name="alarm_T">
+  </div>
+
+  <script src="script.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/bolt-iot-wrapper/umd/boltIotWrapper.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="static/Images/favic.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <title>Complete Home Automation</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+  <!-- Bootstrap core CSS -->
+  <!-- https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/carousel.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#" style="font-family: 'Dancing Script', cursive;">Home Automation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mainDesign">Circuit Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bio">My Profile</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+    <div class="row block-format">
+      <div class="col-lg-4"> </div>
+
+      <div class="col-lg-4">
+        <div class="text-center">
+          <img class="mb-4" src="static/Images/favic.png" alt="" width="100" height="100">
+          <h1 class="h3 mb-3 font-weight-normal" style="margin-bottom : 2rem;">Please Enter Device Credentials</h1>
+          <label for="api_key" class="sr-only">Bolt API Key</label>
+          <input type="text" id="api_key" class="form-control" placeholder="Bolt API Key" value="" required autofocus>
+          <label for="bolt_id" class="sr-only">Bolt Device ID</label>
+          <input type="text" id="bolt_id" class="form-control" placeholder="Bolt Device ID" value="" required/>
+            <button type="button" onclick="setUpBolt()">Authenticate</button>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4"> </div>
+    </div>
+
+    <!-- Marketing messaging and featurettes
+      ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4" id="bulb">
+          <img class="rounded-circle" id="bulbImg" src="static/Images/bulbOff1.jpg" alt="Light Control" width="180" height="180">
+          <h2 class="bulb_status" style="font-family: 'Lemonada', cursive;">OFF</h2>
+          <p>It Controls Lights in your house. for demonstration I used Two LED.</p>
+          <p><a class="btn btn-secondary" href="#light" role="button">View Circuit Connection &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4" id="fan">
+          <img class="rounded-circle" id="fanImg" src="static/Images/fan2.png" alt="Fan Control" width="180" height="180">
+          <h2 class="fan_status" style="font-family: 'Lemonada', cursive;">OFF</h2>
+          <p>It controls the Fan in your house. for demonstration I used a Fan.</p>
+          <p><a class="btn btn-secondary" href="#fan" role="button">View Circuit Connection &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4" id="tempCtrl">
+          <img class="rounded-circle" id="TempImg" src="static/Images/fan3.jpg" alt="Activate Temperature Control" width="180" height="180">
+          <h2 class="exhaust_status" style="font-family: 'Lemonada', cursive;">OFF</h2>
+          <p>You can activate or deactivate smart fire alarm system, By pressing here. As tempretue of room crosses threshold exhaust fan starts working till tempreture becomes normal.</p>
+          <p><a class="btn btn-secondary" href="#tempControl" role="button">View Circuit Connection &raquo;</a></p>
+        </div>
+      </div><!-- /.row -->
+      <hr class="featurette-divider">
+      <!-- START THE FEATURETTES -->
+      <div class="row" class="text-center">
+        <div class="col-lg-3">
+          <p>Threshold Temperature Value</p>
+          <input align="center" id="threshold" type="number" min="30" max="60" step="1" value="30">
+        </div>
+        <div class="col-lg-5"> </div>
+        <div class="col-lg-4">
+          <p>Sensing Current Temperature</p>
+          <img src="static/Images/fire.png" alt="Temperature Control" width="30" height="30">
+          <label style="font-family: 'Lemonada', cursive;">39℃</label>
+          <img src="static/Images/downArrow.png" alt="UpDown Arrow" width="10" height="30">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+
+      <div class="row featurette" id="mainDesign">
+        <div class="col-md-1"> </div>
+        <div class="col-md-10">
+          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="static/Images/Home_Automation_final.JPG" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-1"> </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette" id="light">
+        <div class="col-md-5 order-md-2">
+          <h2 class="featurette-heading">Light Circuit</h2>
+          <ul class="lead">
+            <li>Bolt Device x 1</li>
+            <li>BreadBoard(Mini) x 1</li>
+            <li>LED x 2</li>
+            <li>Resister(1k) x 1</li>
+            <li>Jumper Wires x 4</li>
+          </ul>
+        </div>
+        <div class="col-md-7 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="static/Images/Light_circuit.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette" id="fan">
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Fan Circuit</h2>
+          <ul class="lead">
+            <li>Bolt Device x 1</li>
+            <li>BreadBoard(Mini) x 1</li>
+            <li>5V DC motor x 1</li>
+            <li>Transister(2N2222A) x 1</li>
+            <li>Jumper Wires x 4</li>
+          </ul>
+        </div>
+        <div class="col-md-7">
+          <img class="featurette-image img-fluid mx-auto" src="static/Images/Fan_Control.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+      <div class="row featurette" id="tempControl">
+
+        <div class="col-md-7">
+          <img class="featurette-image img-fluid mx-auto" src="static/Images/smart_fire_circuit.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Smart Temperature Conrtol Circuit</h2>
+          <ul class="lead">
+            <li>Bolt Device x 1</li>
+            <li>BreadBoard(Mini) x 1</li>
+            <li>5V DC motor x 1</li>
+            <li>Transister(2N2222A) x 1</li>
+            <li>Jumper Wires x 10</li>
+            <li>Temperature Sensor(LM-35) x 1</li>
+            <li>Piezzo Buzzer x 1</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="featurette-divider">
+      <!-- /END THE FEATURETTES -->
+    </div><!-- /.container -->
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="row featurette">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <img class="featurette-image img-fluid mx-auto" src="static/Images/MyImage.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+
+        <div class="col-md-5" id="bio">
+          <h2 class="featurette-heading">Khalid Faisal</h2>
+          <p class="lead">Software Engineer, Postgraduated from NIT_SURAT</p>
+        </div>
+        <div class="col-md-3">
+          <img src="static/Images/bulbOn1.jpg" height="5" width="5">
+          <img src="static/Images/upArrow.png" height="5" width="5">
+        </div>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; copyright, Khalid Faisal. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </main>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="static/script.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/bolt-iot-wrapper/umd/boltIotWrapper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+  </script>
+
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+</body>
+
+</html>
